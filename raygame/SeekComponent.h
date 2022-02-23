@@ -6,17 +6,19 @@ class SeekComponent :
 {
 public:
 	SeekComponent(Actor* target, const char* name = "Seek Component");
+	SeekComponent(MathLibrary::Vector2 position, const char* name = "Seek Component");
 
-	Actor* getTarget() { return m_target; }
+	Actor* getActorTarget() { return m_actorTarget; }
 
-	void setTarget(Actor* target) { m_target = target; }
+	void setTarget(MathLibrary::Vector2 target) { m_target = target; }
 
 	void setSpeed(float speed) { m_maxSpeed = speed; }
 
 	void update(float deltaTime) override;
 
 private:
-	Actor* m_target;
+	Actor* m_actorTarget;
+	MathLibrary::Vector2 m_target;
 	MathLibrary::Vector2 m_currentVelocity;
 	MathLibrary::Vector2 m_steeringForce;
 	MathLibrary::Vector2 m_desiredVelocity;

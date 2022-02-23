@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Transform2D.h"
 #include "InputComponent.h"
 #include "MoveComponent.h"
 #include "SpriteComponent.h"
@@ -24,4 +25,7 @@ void Player::update(float deltaTime)
 	MathLibrary::Vector2 moveDirection = m_inputComponent->getMoveAxis();
 
 	m_moveComponent->setVelocity(moveDirection * 500);
+
+	if (m_moveComponent->getVelocity().getMagnitude() > 0)
+		getTransform()->setForward(m_moveComponent->getVelocity().getNormalized());
 }

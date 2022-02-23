@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include <Vector2.h>
 class InputComponent;
 class MoveComponent;
 class SpriteComponent;

@@ -71,6 +71,12 @@
     <ClCompile Include="FleeEnemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WanderComponent.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderEnemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scene.h">
@@ -125,6 +131,12 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="FleeEnemy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderEnemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
