@@ -8,13 +8,16 @@ public:
 	WanderComponent() {};
 	WanderComponent(float distance, float radius, const char* name = "Wander Component");
 
+	void setDistance(float distance) { m_distance = distance; }
+	void setRadius(float radius) { m_radius = radius; }
+
 	void start() override;
 	void update(float deltaTime) override;
 
 private:
 	float m_distance;
 	float m_radius;
-	float m_randomValue;
-	MathLibrary::Vector2 m_position;
+	float m_force;
+	MathLibrary::Vector2 m_angle;
 };
 

@@ -1,6 +1,7 @@
 #include "WanderComponent.h"
 #include "Transform2D.h"
 #include "Actor.h"
+#include "MoveComponent.h"
 #include <stdlib.h> 
 #include <time.h>    
 #include <Vector2.h>
@@ -9,17 +10,28 @@ WanderComponent::WanderComponent(float distance, float radius, const char* name)
 {
 	m_distance = distance;
 	m_radius = radius;
+	m_force = 200;
+	m_angle = { 0, 0 };
 }
 
 void WanderComponent::start()
 {
 	srand(time(NULL));
-	m_randomValue = (rand() % 200) - 100;
 }
 
 void WanderComponent::update(float deltaTime)
 {
-	m_position = getOwner()->getTransform()->getWorldPosition() * m_distance;
-	m_position = m_position.getNormalized();
-	getOwner()->getTransform()->setWorldPostion(m_position * m_radius);
+	MathLibrary::Vector2 randomVector = { ((rand() % 200) - 100), ((rand() % 200) - 100) };
+
+	MathLibrary::Vector2 randomPoint = randomVector.getNormalized() * m_radius;
+
+	MathLibrary::Vector2 circlePosition = getOwner()->getTransform()->getWorldPosition() + (getOwner()->getTransform()->getForward() * m_distance);
+
+	randomPoint = randomPoint + circlePosition;
+
+	MathLibrary::Vector2 angle =(randomPoint - getOwner()->getTransform()->getWorldPosition()).getNormalized() * m_force;
+
+	m_angle = angle;
+
+
 }
