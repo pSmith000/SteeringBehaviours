@@ -13,9 +13,9 @@ public:
 	void start() override;
 	void update(float deltaTime) override;
 	void onAddComponent(Component* component) override;
-	float getMaxForce();
-	void setMaxForce(float maxForce);
-	MoveComponent* getMoveComponent();
+	float getMaxForce() { return m_maxForce; }
+	void setMaxForce(float maxForce) { m_maxForce = maxForce; }
+	MoveComponent* getMoveComponent() { return m_moveComponent; }
 
 private:
 	DynamicArray<SteeringComponent*> m_steeringComponents;

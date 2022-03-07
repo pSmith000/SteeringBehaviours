@@ -1,11 +1,12 @@
 #pragma once
-#include "Component.h"
+#include "SteeringComponent.h"
 #include <Vector2.h>
 class SeekComponent :
-	public Component
+	public SteeringComponent
 {
 public:
-	SeekComponent(Actor* target, const char* name = "Seek Component");
+	MathLibrary::Vector2 calculateForce();
+	//SeekComponent(Actor* target, const char* name = "Seek Component");
 	SeekComponent(MathLibrary::Vector2 position, const char* name = "Seek Component");
 
 	Actor* getTarget() { return m_actorTarget; }

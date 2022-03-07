@@ -181,6 +181,8 @@ inline T* Actor::addComponent()
     m_components = appendedArray;
     m_componentCount++;
 
+    onAddComponent(component);
+
     return (T*)component;
 }
 
