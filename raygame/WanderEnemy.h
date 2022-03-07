@@ -3,6 +3,7 @@
 
 class WanderComponent;
 class SpriteComponent;
+class MoveComponent;
 
 class WanderEnemy :
 	public Actor
@@ -17,5 +18,6 @@ private:
 	float m_radius;
 	SpriteComponent* m_spriteComponent;
 	WanderComponent* m_wanderComponent;
+	MoveComponent* m_moveComponent;
 };
 

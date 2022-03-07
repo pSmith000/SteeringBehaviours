@@ -11,7 +11,6 @@ public:
 	void setDistance(float distance) { m_distance = distance; }
 	void setRadius(float radius) { m_radius = radius; }
 
-	void start() override;
 	void update(float deltaTime) override;
 
 private:
