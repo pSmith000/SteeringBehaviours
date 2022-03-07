@@ -4,10 +4,11 @@
 
 SeekComponent::SeekComponent(Actor* target, const char* name) : Component::Component(name)
 {
-	m_target = target->getTransform()->getWorldPosition();
+	m_actorTarget = target;
 	m_maxSpeed = 500;
 	m_seekForce = 500;
 	m_currentVelocity = MathLibrary::Vector2{ 0, 0 };
+	hasActor = true;
 }
 
 SeekComponent::SeekComponent(MathLibrary::Vector2 position, const char* name)
@@ -16,11 +17,15 @@ SeekComponent::SeekComponent(MathLibrary::Vector2 position, const char* name)
 	m_maxSpeed = 500;
 	m_seekForce = 500;
 	m_currentVelocity = MathLibrary::Vector2{ 0, 0 };
+	hasActor = false;
 }
 
 void SeekComponent::update(float deltaTime)
 {
-	m_desiredVelocity = (m_target - getOwner()->getTransform()->getWorldPosition()).getNormalized() * m_seekForce;
+	if (hasActor)
+		m_desiredVelocity = (getTarget()->getTransform()->getWorldPosition() - getOwner()->getTransform()->getWorldPosition()).getNormalized() * m_seekForce;
+	else
+		m_desiredVelocity = (m_target - getOwner()->getTransform()->getWorldPosition()).getNormalized() * m_seekForce;
 
 	getOwner()->getTransform()->setForward(m_currentVelocity);
 

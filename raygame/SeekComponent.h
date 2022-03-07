@@ -8,9 +8,9 @@ public:
 	SeekComponent(Actor* target, const char* name = "Seek Component");
 	SeekComponent(MathLibrary::Vector2 position, const char* name = "Seek Component");
 
-	Actor* getActorTarget() { return m_actorTarget; }
+	Actor* getTarget() { return m_actorTarget; }
 
-	void setTarget(MathLibrary::Vector2 target) { m_target = target; }
+	void setPosition(MathLibrary::Vector2 target) { m_target = target; }
 
 	void setSpeed(float speed) { m_maxSpeed = speed; }
 
@@ -24,5 +24,6 @@ private:
 	MathLibrary::Vector2 m_desiredVelocity;
 	float m_seekForce;
 	float m_maxSpeed;
+	bool hasActor;
 };
 

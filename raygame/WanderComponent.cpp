@@ -5,6 +5,7 @@
 #include <stdlib.h> 
 #include <time.h>    
 #include <Vector2.h>
+#include <math.h>
 
 WanderComponent::WanderComponent(float distance, float radius, const char* name) : Component :: Component(name)
 {
@@ -21,17 +22,17 @@ void WanderComponent::start()
 
 void WanderComponent::update(float deltaTime)
 {
-	MathLibrary::Vector2 randomVector = { ((rand() % 200) - 100), ((rand() % 200) - 100) };
+	MathLibrary::Vector2 randomVector = { (float)((rand() % 200)), (float)((rand() % 200)) };
 
-	MathLibrary::Vector2 randomPoint = randomVector.getNormalized() * m_radius;
+	//MathLibrary::Vector2 randomPoint = { (float)(cos(randomVector.x), (float)sin(randomVector.y)) };
 
 	MathLibrary::Vector2 circlePosition = getOwner()->getTransform()->getWorldPosition() + (getOwner()->getTransform()->getForward() * m_distance);
 
-	randomPoint = randomPoint + circlePosition;
+	//randomPoint = randomPoint + circlePosition;
 
-	MathLibrary::Vector2 angle =(randomPoint - getOwner()->getTransform()->getWorldPosition()).getNormalized() * m_force;
+	//MathLibrary::Vector2 angle =(randomPoint - getOwner()->getTransform()->getWorldPosition()).getNormalized() * m_force;
 
-	m_angle = angle;
+	//m_angle = angle;
 
 
 }
