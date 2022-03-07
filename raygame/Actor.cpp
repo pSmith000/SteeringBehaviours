@@ -180,6 +180,15 @@ void Actor::update(float deltaTime)
 
         m_components[i]->update(deltaTime);
     }
+
+    if (getTransform()->getWorldPosition().x > 700)
+        getTransform()->setWorldPostion(MathLibrary::Vector2{ 0, getTransform()->getWorldPosition().y });
+    if (getTransform()->getWorldPosition().x < 0)
+        getTransform()->setWorldPostion(MathLibrary::Vector2{ 700, getTransform()->getWorldPosition().y });
+    if (getTransform()->getWorldPosition().y > 800)
+        getTransform()->setWorldPostion(MathLibrary::Vector2{ getTransform()->getWorldPosition().x, 0 });
+    if (getTransform()->getWorldPosition().y < 0)
+        getTransform()->setWorldPostion(MathLibrary::Vector2{ getTransform()->getWorldPosition().x, 800 });
 }
 
 void Actor::draw()
