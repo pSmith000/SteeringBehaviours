@@ -4,11 +4,17 @@
 
 void Agent::start()
 {
+	Actor::start();
+
 	m_moveComponent = addComponent<MoveComponent>();
+	m_moveComponent->setMaxSpeed(500);
+	m_moveComponent->setUpdateFacing(true);
 }
 
 void Agent::update(float deltaTime)
 {
+	Actor::update(deltaTime);
+
 	//get all force being applied from steering behaviours
 	for (int i = 0; i < m_steeringComponents.getLength(); i++)
 	{

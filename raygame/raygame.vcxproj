@@ -153,8 +153,6 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="FleeComponent.cpp" />
-    <ClCompile Include="FleeEnemy.cpp" />
-    <ClCompile Include="SeekEnemy.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="main.cpp" />
@@ -167,7 +165,6 @@
     <ClCompile Include="SteeringComponent.cpp" />
     <ClCompile Include="Transform2D.cpp" />
     <ClCompile Include="WanderComponent.cpp" />
-    <ClCompile Include="WanderEnemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABBCollider.h" />
@@ -178,8 +175,6 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="FleeComponent.h" />
-    <ClInclude Include="FleeEnemy.h" />
-    <ClInclude Include="SeekEnemy.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="InputComponent.h" />
     <ClInclude Include="MainScene.h" />
@@ -191,7 +186,6 @@
     <ClInclude Include="SteeringComponent.h" />
     <ClInclude Include="Transform2D.h" />
     <ClInclude Include="WanderComponent.h" />
-    <ClInclude Include="WanderEnemy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

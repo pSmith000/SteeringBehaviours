@@ -59,20 +59,11 @@
     <ClCompile Include="SpriteComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="SeekEnemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FleeComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="FleeEnemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WanderComponent.cpp">
       <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderEnemy.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SteeringComponent.cpp">
       <Filter>Source Files</Filter>
@@ -127,20 +118,11 @@
     <ClInclude Include="InputComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="SeekEnemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="FleeComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="FleeEnemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WanderComponent.h">
       <Filter>Components</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderEnemy.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SteeringComponent.h">
       <Filter>Header Files</Filter>

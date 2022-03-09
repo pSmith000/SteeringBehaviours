@@ -2,29 +2,24 @@
 #include "SpriteComponent.h"
 #include "MoveComponent.h"
 #include "SeekComponent.h"
+#include "WanderComponent.h"
 #include "Transform2D.h"
 #include "Player.h"
-#include "FleeEnemy.h"
-#include "SeekEnemy.h"
-#include "WanderEnemy.h"
+#include "Agent.h"
 
 void MainScene::start()
 {
 	Player* player = new Player(50, 50, "Player");
 	player->getTransform()->setScale({ 50, 50 });
 
-	FleeEnemy* enemy = new FleeEnemy(player, 100, 100, "Enemy");
-	SeekEnemy* enemy2 = new SeekEnemy(player, 100, 100, "Enemy");
-	WanderEnemy* enemy3 = new WanderEnemy(10000, 100000, 200, 200, "Enemy");
 
-	enemy->getTransform()->setScale({ 50, 50 });
-	enemy2->getTransform()->setScale({ 50, 50 });
-	enemy3->getTransform()->setScale({ 50, 50 });
-
-	
-
+	Agent* agent = new Agent();
+	agent->getTransform()->setScale({ 50,50 });
+	agent->getTransform()->setWorldPostion({ 50, 50 });
+	agent->setMaxForce(200);
+	agent->addComponent(new SpriteComponent("Images/enemy.png"));
+	WanderComponent* comp = new WanderComponent(1000, 200, 50);
+	agent->addComponent(comp);
 	addActor(player);
-	addActor(enemy);
-	addActor(enemy2);
-	addActor(enemy3);
+	addActor(agent);
 }
