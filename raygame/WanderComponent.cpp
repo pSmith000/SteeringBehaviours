@@ -24,7 +24,7 @@ MathLibrary::Vector2 WanderComponent::calculateForce()
 	//Find the circles position in front of agent
 	m_circlePosition = ownerPosition + (heading * m_circleDistance);
 
-	//Find a random vectoron the circle
+	//Find a random vector on the circle
 	float randNum = (rand() % 201);
 	MathLibrary::Vector2 randDirection = MathLibrary::Vector2(cos(randNum), sin(randNum)) * m_circleRadius;
 
